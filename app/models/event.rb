@@ -1,4 +1,15 @@
 class Event < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
+  def slug_candidates
+    [
+      :name,
+      [:name, :description],
+      [:name, :description, :start_at],
+    ]
+  end
+
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 60 }

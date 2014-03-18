@@ -51,6 +51,9 @@ end
 
 gem 'foundation-rails'
 
+gem 'friendly_id', '~> 5.0.0'
+
+gem 'simple_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

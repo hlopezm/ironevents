@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
   end
 
   def new
@@ -32,12 +32,12 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     authorize @event
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     authorize @event
 
     if @event.update update_params
@@ -48,7 +48,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
 
     authorize @event
 
